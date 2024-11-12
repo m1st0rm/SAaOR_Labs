@@ -2,14 +2,14 @@ from typing import List, Tuple
 
 
 START_VERTEX = 0
-END_VERTEX = 3
-GRAPH = [  # each row represents a vertex and contains a list of pairs (neighbor_vertex, edge_weight)
-    [(1, 4), (4, 2)],
-    [(2, 10), (4, 5)],
-    [(3, 11)],
+END_VERTEX = 4
+GRAPH = [
+    [(1, 9), (4, 2)],
+    [(2, 7), (4, 5)],
+    [(3, 1)],
     [],
     [(5, 3)],
-    [(2, 4)],
+    [(2, 1)],
 ]
 
 
@@ -116,7 +116,11 @@ def longest_path(
 
 def main() -> None:
     sorted_vertices = topological_sort(GRAPH, START_VERTEX)
-    print(longest_path(GRAPH, sorted_vertices, START_VERTEX, END_VERTEX))
+    result = longest_path(GRAPH, sorted_vertices, START_VERTEX, END_VERTEX)
+    print(
+        f"Длина наибольшено пути от вершины {START_VERTEX} до вершины {END_VERTEX}: {result[0]}"
+    )
+    print(f"Вершины, через которые проходит наибольший путь: {result[1]}")
 
 
 if __name__ == "__main__":
