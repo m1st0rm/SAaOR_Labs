@@ -1,15 +1,15 @@
 from typing import List, Tuple
 
 
-START_VERTEX = 0
-END_VERTEX = 4
+START_VERTEX = 1
+END_VERTEX = 5
 GRAPH = [
-    [(1, 9), (4, 2)],
+    [],
     [(2, 7), (4, 5)],
     [(3, 1)],
-    [],
+    [(5, 9), (4, 2)],
     [(5, 3)],
-    [(2, 1)],
+    [],
 ]
 
 
@@ -120,7 +120,9 @@ def main() -> None:
     print(
         f"Длина наибольшено пути от вершины {START_VERTEX} до вершины {END_VERTEX}: {result[0]}"
     )
-    print(f"Вершины, через которые проходит наибольший путь: {result[1]}")
+    print(
+        f"Вершины, через которые проходит наибольший путь в порядке следования: {result[1]}"
+    )
 
 
 if __name__ == "__main__":
