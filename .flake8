@@ -1,4 +1,4 @@
 [flake8]
 exclude = .git,.venv,__init.py__,.db-queries
 max-line-length = 79
-ignore = E501
+ignore = E501, W503
